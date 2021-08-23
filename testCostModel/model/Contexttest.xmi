@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<testCostModel:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:testCostModel="http://www.example.org/testCostModel">
+  <operationParameter id="op1"/>
+  <operationParameter id="op2" value="aggregation"/>
+  <databaseParameter xsi:type="testCostModel:TableParameter" id="x"/>
+  <databaseParameter xsi:type="testCostModel:TableParameter" id="Y" value="numpage"/>
+  <costFunction>
+    <logicalcost>
+      <itsValue xsi:type="testCostModel:ConstantValue" value="9.3"/>
+    </logicalcost>
+    <logicalcost>
+      <itsValue xsi:type="testCostModel:CalculatedValue" itsInputParameter="x Y"/>
+    </logicalcost>
+  </costFunction>
+</testCostModel:Context>

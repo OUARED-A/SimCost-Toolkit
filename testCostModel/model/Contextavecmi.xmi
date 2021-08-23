@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<testCostModel:Context
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:testCostModel="http://www.example.org/testCostModel"
+    xsi:schemaLocation="http://www.example.org/testCostModel testCostModel.ecore">
+  <operationParameter/>
+  <databaseParameter
+      xsi:type="testCostModel:TableParameter"
+      id="card1"/>
+  <costFunction>
+    <logicalcost>
+      <itsValue
+          xsi:type="testCostModel:CalculatedValue"
+          itsInputParameter="card1"/>
+    </logicalcost>
+  </costFunction>
+</testCostModel:Context>

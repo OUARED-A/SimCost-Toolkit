@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testCostModel" nsURI="http://www.example.org/testCostModel"
+    nsPrefix="testCostModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Context">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationParameter" upperBound="-1"
+        eType="#//OperationParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databaseParameter" upperBound="-1"
+        eType="#//DatabaseParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="costFunction" eType="#//CostFunction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platfromparameter" upperBound="-1"
+        eType="#//PlatfromParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accessmethodparameters"
+        upperBound="-1" eType="#//AccessMethodParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonfunctionalrequirement"
+        upperBound="-1" eType="#//NonFunctionalRequirement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CostType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Formula" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationParameter" eSuperTypes="#//Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//OperationType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
+    <eLiterals name="Union"/>
+    <eLiterals name="Project" value="1"/>
+    <eLiterals name="Intersect" value="2"/>
+    <eLiterals name="Difference" value="3"/>
+    <eLiterals name="Selection" value="4"/>
+    <eLiterals name="Cartesian product" value="5"/>
+    <eLiterals name="Delete" value="6"/>
+    <eLiterals name="Aggregation" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatabaseParameter" eSuperTypes="#//Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//DatabaseParamtersType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RequirementType">
+    <eLiterals name="Performance"/>
+    <eLiterals name="Energy" value="1"/>
+    <eLiterals name="SystemSize" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CostFunction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalcost" upperBound="-1"
+        eType="#//LogicalCost" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physicalCost" upperBound="-1"
+        eType="#//PhysicalCost" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formula" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalCost">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itsValue" upperBound="-1"
+        eType="#//Value" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhysicalCost">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itsValue" upperBound="-1"
+        eType="#//Value" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CalculatedValue" eSuperTypes="#//Value">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Role"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itsInputParameter" upperBound="-1"
+        eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formula" eType="ecore:EClass ../../fr.ensma.lias.costmodel/mathmodels/ecore/ml.ecore#//MathType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../fr.ensma.lias.costmodel/mathmodels/ecore/ml.ecore#//MiType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatfromParameter" eSuperTypes="#//Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//HardwareType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessMethodParameter" eSuperTypes="#//Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//StrutureType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonFunctionalRequirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//RequirementType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CostType">
+    <eLiterals name="CPU"/>
+    <eLiterals name="I/O" value="1"/>
+    <eLiterals name="Memory" value="2"/>
+    <eLiterals name="Network" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CostModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
+        eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="costmodel" eType="#//CostModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencePaper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StrutureType">
+    <eLiterals name="Index"/>
+    <eLiterals name="Materilized view" value="1"/>
+    <eLiterals name="Partitioning" value="2"/>
+    <eLiterals name="Compression" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HardwareType">
+    <eLiterals name="Secondary Storage"/>
+    <eLiterals name="Primary Storage Device" value="1"/>
+    <eLiterals name="Processing Storage Device" value="2"/>
+    <eLiterals name="Coprocessing Device" value="3"/>
+    <eLiterals name="Communication Device" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DatabaseParamtersType">
+    <eLiterals name="Data Structure"/>
+    <eLiterals name="Storage Model" value="1"/>
+    <eLiterals name="Architecture" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

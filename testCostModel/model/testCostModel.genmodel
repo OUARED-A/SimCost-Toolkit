@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/testCostModel/src" modelPluginID="testCostModel"
+    modelName="TestCostModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>testCostModel.ecore</foreignModel>
+  <genPackages prefix="TestCostModel" disposableProviderFactory="true" ecorePackage="testCostModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//OperationType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Union"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Project"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Intersect"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Difference"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Selection"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Cartesian%20product"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Delete"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//OperationType/Aggregation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//RequirementType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//RequirementType/Performance"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//RequirementType/Energy"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//RequirementType/SystemSize"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//CostType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//CostType/CPU"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//CostType/I%2FO"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//CostType/Memory"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//CostType/Network"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//StrutureType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//StrutureType/Index"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//StrutureType/Materilized%20view"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//StrutureType/Partitioning"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//StrutureType/Compression"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//HardwareType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//HardwareType/Secondary%20Storage"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//HardwareType/Primary%20Storage%20Device"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//HardwareType/Processing%20Storage%20Device"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//HardwareType/Coprocessing%20Device"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//HardwareType/Communication%20Device"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="testCostModel.ecore#//DatabaseParamtersType">
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//DatabaseParamtersType/Data%20Structure"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//DatabaseParamtersType/Storage%20Model"/>
+      <genEnumLiterals ecoreEnumLiteral="testCostModel.ecore#//DatabaseParamtersType/Architecture"/>
+    </genEnums>
+    <genClasses ecoreClass="testCostModel.ecore#//Context">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/operationParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/databaseParameter"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/costFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/platfromparameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/accessmethodparameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//Context/nonfunctionalrequirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//Context/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//Context/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//Context/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//Context/Formula"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//OperationParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//OperationParameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//OperationParameter/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//DatabaseParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//DatabaseParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//DatabaseParameter/category"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//CostFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CostFunction/logicalcost"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CostFunction/physicalCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//CostFunction/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//CostFunction/formula"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//LogicalCost">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//LogicalCost/itsValue"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//PhysicalCost">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//PhysicalCost/itsValue"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//ConstantValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//ConstantValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//CalculatedValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CalculatedValue/itsInputParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CalculatedValue/formula"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//Value"/>
+    <genClasses ecoreClass="testCostModel.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//Parameter/id"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//PlatfromParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//PlatfromParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//PlatfromParameter/category"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//AccessMethodParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//AccessMethodParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//AccessMethodParameter/category"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//NonFunctionalRequirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//NonFunctionalRequirement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="testCostModel.ecore#//CostModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CostModel/context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testCostModel.ecore#//CostModel/costmodel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//CostModel/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//CostModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testCostModel.ecore#//CostModel/referencePaper"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
