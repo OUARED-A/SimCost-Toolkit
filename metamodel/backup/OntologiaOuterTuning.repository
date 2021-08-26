@@ -1,0 +1,6 @@
+./imports/abox.owl?forceReadOnly=false
+./imports/query.owl?forceReadOnly=false
+./imports/sqwrl.owl?forceReadOnly=false
+./imports/swrla.owl?forceReadOnly=false
+./imports/swrlx.owl?forceReadOnly=false
+./imports/tbox.owl?forceReadOnly=false
